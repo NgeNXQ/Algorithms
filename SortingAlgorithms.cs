@@ -1,6 +1,4 @@
-﻿using System.Runtime.ExceptionServices;
-
-namespace Algorithms
+﻿namespace Algorithms
 {
     public static class SortingAlgorithms
     {
@@ -157,15 +155,20 @@ namespace Algorithms
             }
         }
 
-        public static void QuickSort(ref int[] array, Order order)
+        public static void QuickSortAscending(ref int[] array, int pivot)
         {
-
+            
         }
 
-        public static void QuickSort(ref char[] array, Order order)
+        public static int[] QuickSortDescending(int[] array)
         {
-
+            throw new System.NotImplementedException();
         }
+
+        //public static void QuickSort(ref char[] array)
+        //{
+
+        //}
         #endregion
     }
 }

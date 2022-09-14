@@ -45,7 +45,7 @@
                 int high = array.Length - 1;
                 int mid;
 
-                int guess;
+                char guess;
 
                 while (low <= high)
                 {
@@ -116,7 +116,7 @@
                 if (low <= high)
                 {
                     int mid = (low + high) / 2;
-                    int guess = array[mid];
+                    char guess = array[mid];
 
                     if (guess == value)
                         return mid;
@@ -132,12 +132,38 @@
 
         public static int BinarySearchRecursed(ref int[] array, int value, int low, int high)
         {
-            throw new System.NotImplementedException();
+            if (low <= high)
+            {
+                int mid = (low + high) / 2;
+                int guess = array[mid];
+
+                if (guess == value)
+                    return mid;
+                else if (guess < value)
+                    return BinarySearchRecursed(ref array, value, mid + 1, high);
+                else
+                    return BinarySearchRecursed(ref array, value, low, mid - 1);
+            }
+
+            return -1;
         }
 
         public static int BinarySearchRecursed(ref char[] array, char value, int low, int high)
         {
-            throw new System.NotImplementedException();
+            if (low <= high)
+            {
+                int mid = (low + high) / 2;
+                char guess = array[mid];
+
+                if (guess == value)
+                    return mid;
+                else if (guess < value)
+                    return BinarySearchRecursed(ref array, value, mid + 1, high);
+                else
+                    return BinarySearchRecursed(ref array, value, low, mid - 1);
+            }
+
+            return -1;
         }
     }
 }
